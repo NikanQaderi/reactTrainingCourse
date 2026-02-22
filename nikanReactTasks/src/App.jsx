@@ -15,13 +15,14 @@ const App = () => {
     <div className='w-fit h-fit absolute top-10 left-10'>
     <BuyBasket count={basketcount}/>
     </div>
+    
     {Cards.map(product => (
       <ProductCard key={product.id}
       ProductPic={product.productPic}
       brandname={product.brandname}
       productName={product.productName}
       price={product.price} 
-      setbuycount={setbuycount}
+      setbuycount={setbuycount} 
       />
     ))}
 
