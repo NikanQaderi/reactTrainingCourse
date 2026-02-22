@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-const ProductCard = ({ProductPic ,brandname ,productName ,price}) => {
+const ProductCard = ({ProductPic ,brandname ,productName ,price ,setbuycount}) => {
 const [isAdded, setIsAdded] = useState(false)
 
  useEffect(()=>{
@@ -17,9 +17,9 @@ const [isAdded, setIsAdded] = useState(false)
             <h3 className='text-2xl font-bold text-gray-900 mt-1'>${price}</h3>
             
             {!isAdded ? (
-            <button onClick={() => { setIsAdded(true);setbuycount(basketcount + 1)}} className='w-full h-11 mt-3 rounded-3xl bg-blue-700 text-white'>Add to basket</button>
+            <button onClick={() => { setIsAdded(true); setbuycount((prev) => prev + 1)}} className='w-full h-11 mt-3 rounded-3xl bg-blue-700 text-white'>Add to basket</button>
              ) : (
-             <button onClick={() => setIsAdded(false)} className='w-full h-11 mt-3 rounded-3xl bg-green-700 text-white'>Added</button>
+             <button onClick={() => { setIsAdded(false); setbuycount((prev) => prev - 1)}} className='w-full h-11 mt-3 rounded-3xl bg-green-700 text-white'>Added</button>
               )}
             </div>
     </div>

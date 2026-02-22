@@ -13,9 +13,9 @@ const App = () => {
   <>
   <div className="flex items-center justify-center h-screen gap-6">
     <div className='w-fit h-fit absolute top-10 left-10'>
-    <BuyBasket count={basketcount}/>
+    <BuyBasket items={basketcount}/>
     </div>
-    
+
     {Cards.map(product => (
       <ProductCard key={product.id}
       ProductPic={product.productPic}
